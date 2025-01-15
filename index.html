@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Warming Invitation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="language-switcher" style="text-align: left; margin: 10px;">
+        <button id="englishBtn">English</button>
+        <button id="marathiBtn">मराठी</button>
+    </div>
+    
+    <div id="wrapper">
+        <div class="container">
+            <div class="header">
+                <img src="ganesha.jpg" alt="Ganesha Logo" class="ganesha-logo">
+                <p data-key="blessings">||Shree Ganeshay Namaha||</p>
+            </div>
+            
+
+            <h1 data-key="sharing-joy">SHARING OUR JOY!</h1>
+            <p data-key="invitation">WE ARE EXCITED TO INVITE YOU TO OUR HOUSE WARMING CEREMONY!</p>
+            <div class="card">
+                <img src="home.jpeg" alt="house image"> 
+                <div class="card-container">
+                    <h2 data-key="ceremony">House Warming Ceremony</h2>
+                    <h3 data-key="host">MR. ANOJ & MRS. POOJA MADALI</h3>
+                    <p data-key="invite">Cordially, we invite you and your family to join us on the auspicious occasion of our housewarming ceremony, as we celebrate our new home.</p>
+                    <h3 data-key="date">On Friday, 07 February, 2025</h3>
+                    <p data-key="details">From 12:30 PM<br>At<br>CTS. No 3174/A Bhagya Nagar, Belgaum, Karnataka, India, 590006</p>
+                    <p>Ph: +919741798028 / +919742678804</p>
+                </div>
+            </div>
+            
+            
+            
+            <div class="early-invitation">
+                <p data-key="early-note">"We're sharing this invitation in advance to ensure you can join us on our special day"<br>
+                Your presence means a lot to us!</p>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+        const eventDate = new Date('2025-02-07T12:30:00').getTime();
+        const translations = {
+    en: {
+        "blessings": "||Shree Ganeshaya Namaha||",
+        "sharing-joy": "SHARING OUR JOY!",
+        "invitation": "WE ARE EXCITED TO INVITE YOU TO OUR HOUSE WARMING CEREMONY!",
+        "ceremony": "House Warming Ceremony",
+        "host": "MR. ANOJ & MRS. POOJA MADALI",
+        "invite": "Cordially, we invite you and your family to join us on the auspicious occasion of our housewarming ceremony, as we celebrate our new home.",
+        "date": "On Thursday, 23 January, 2025",
+        "details": "From 12:30 PM<br>At<br>CTS. No 3174/A Bhagya Nagar, Belgaum, Karnataka, India, 590006",
+        "countdown": "TIME TO CELEBRATE",
+        "early-note": "\"We're sharing this invitation in advance to ensure you can join us on our special day. Your presence means a lot to us!\"",
+        "directions": "GET DIRECTIONS",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds"
+    },
+    mr: {
+        "blessings": "|| श्री गणेशाय नमः ||",
+        "sharing-joy": "गृहप्रवेश!",
+        "invitation": "आमच्या गृहप्रवेश समारंभासाठी आपणास निमंत्रित करण्यात आम्हाला खूप आनंद होत आहे!",
+        "ceremony": "गृहप्रवेश समारंभ",
+        "host": "श्री. अनोज व सौ. पूजा मदली",
+        "invite": "\"गृहप्रवेशाच्या या सुंदर सोहळ्यात,तुमच्या उपस्थितीने होईल आनंदात भर.\"",
+        "date": "शुक्रवार, ०७ फेब्रुवारी, २०२५ रोजी ",
+        "details": "दुपारी १२:३० वाजता<br><b>स्थळ:</b>CTS. क्रमांक ३१७४/A भाग्य नगर दुसरा क्रॉस, बेळगांव, कर्नाटक, भारत, ५९०००६",
+        "countdown": "उत्साहाचा क्षण",
+        "early-note":"\"आम्ही आपल्याला आमच्या खास दिवशी सहभागी होण्यासाठी आमंत्रित करत आहोत. आपली उपस्थिती आम्हाला खूप महत्त्वाची आहे!\"",
+        "directions": "मार्ग",
+        "days": "दिवस",
+        "hours": "तास",
+        "minutes": "मिनिटे",
+        "seconds": "सेकंद"
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const englishBtn = document.getElementById('englishBtn');
+    const marathiBtn = document.getElementById('marathiBtn');
+
+    let currentLanguage = "en"; // Default language
+
+    function switchLanguage(lang) {
+        currentLanguage = lang;
+        const elements = document.querySelectorAll("[data-key]");
+        elements.forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    englishBtn.addEventListener('click', () => switchLanguage('en'));
+    marathiBtn.addEventListener('click', () => switchLanguage('mr'));
+
+    const eventDate = new Date('2025-01-23T12:30:00').getTime();
+    const timerElement = document.getElementById('timer');
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
+
+        if (timeLeft > 0) {
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            timerElement.innerHTML = `${days} ${translations[currentLanguage].days} ` +
+                `${hours} ${translations[currentLanguage].hours} ` +
+                `${minutes} ${translations[currentLanguage].minutes} ` +
+                `${seconds} ${translations[currentLanguage].seconds}`;
+        } else {
+            timerElement.innerHTML = currentLanguage === "en"
+                ? "The ceremony has started!"
+                : "समारंभ सुरू झाला आहे!";
+        }
+    }, 1000);
+});
+
+
+    </script>
+</body>
+</html>

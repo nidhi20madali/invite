@@ -1,0 +1,347 @@
+/* General Reset */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+ #language-switcher{
+    display: flex;
+    flex-direction: row;
+    justify-items:baseline; 
+    position:sticky;
+
+} 
+#language-switcher button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+   
+}
+
+
+
+/* Wrapper */
+#wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    background-image: url(bg1.jpeg);
+    background-size:cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 500px;
+    
+}
+
+/* Animation for "YOU'RE INVITED" */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ganesha-logo {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+.header h2 {
+    font-family: 'Georgia', serif; /* Choose a traditional font */
+    font-size: 1rem;
+    margin: 10px 0 0;
+}
+
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #8b4513;
+    animation: bounce 2s infinite;
+    margin-bottom: 10px;
+    
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Card Styling */
+.card {
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-container h2 {
+    font-size: 2rem; 
+    color:#8b4513; 
+    margin-bottom: 10px; 
+    font-family: 'Georgia', serif; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+
+.card-container h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.card-container p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+#countdown {
+    margin: 20px auto; 
+    text-align: center;
+    padding: 15px; 
+    background: #fff7e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 70%; 
+    max-width: 350px; 
+    animation: morph 3s infinite; 
+    transition: transform 0.3s ease; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+#countdown:hover {
+    transform: scale(1.05); 
+}
+
+#countdown h2 {
+    font-size: 1.3rem; 
+    color: #8b4513;
+    margin-bottom: 8px;
+}
+
+#timer {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Morphing animation for countdown box */
+@keyframes morph {
+    0% {
+        border-radius: 10px;
+    }
+    25% {
+        border-radius: 50% 0 50% 0;
+    }
+    50% {
+        border-radius: 0 50% 0 50%;
+    }
+    75% {
+        border-radius: 30% 70% 50% 20%;
+    }
+    100% {
+        border-radius: 10px;
+    }
+}
+@media (max-width:170px){
+    #language-switcher{
+        flex-direction: column;
+        
+    }
+}
+
+
+@media (max-width: 768px) {
+    #countdown {
+        width: 85%; 
+    }
+
+    #countdown h2 {
+        font-size: 1.1rem;
+    }
+
+    #timer {
+        font-size: 0.3rem; 
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #countdown {
+        width: 90%; 
+    }
+
+    #countdown h2 {
+        font-size: 1.2rem; 
+    }
+
+    #timer {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.early-invitation {
+    margin-top: 30px;
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+    font-style: italic; 
+    line-height: 1.6; 
+    margin-bottom: 10px; 
+}
+
+
+.location {
+    margin-top: 10px; 
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+
+.location b {
+    display: block;
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.location iframe {
+    width: 400px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.location iframe:hover {
+    transform: scale(1.05);
+}
+
+.location-image {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-container h3 {
+        font-size: 1rem;
+    }
+
+    .card-container p {
+        font-size: 0.9rem;
+    }
+
+    .location iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-container {
+        padding: 10px;
+    }
+
+    .card-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-container h3 {
+        font-size: 0.9rem;
+    }
+
+    .card-container p {
+        font-size: 0.8rem;
+    }
+
+    .location iframe {
+        height: 200px;
+    }
+}
